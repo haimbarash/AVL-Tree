@@ -112,7 +112,7 @@ The number of values to be inserted into the list will be n = 1500 * i, for i = 
 
 ***Graph:***
 
-<img src=https://user-images.githubusercontent.com/112472485/217863174-f0633680-42e4-4d70-984c-fefeb6761ee6.png width="700">
+<img src=https://user-images.githubusercontent.com/112472485/217874718-d0cd25fa-b5d9-4be8-8694-b09aff664b25.png width="700">
 
 
 Results analysis:
