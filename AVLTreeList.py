@@ -1,8 +1,8 @@
+import random
+
 """AVL Tree List implementation,
 a self-balancing binary search tree,
 uses for efficient storage and retrieval of a list of elements"""
-
-import random
 
 """A class representing a node in an AVL tree"""
 class AVLNode(object):
