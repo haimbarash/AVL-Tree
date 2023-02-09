@@ -1,11 +1,11 @@
 # AVL-Tree
 
-Hey everyone, this repository include an implementation of List ADT using an AVL tree, complete with a complexity analysis and two experiments to validate the analysis resultes.
+Hey everyone, this repository include an implementation of The List ADT using an AVL tree, complete with a complexity analysis and two experiments to validate the analysis resultes.
 
 
 An AVL tree is a self-balancing binary search tree that maintains balance by ensuring that the height difference of the left and right subtrees of any node is not more than 1. This helps to ensure the tree remains balanced and search operations have an average time complexity of O(log n).
 
-
+##AVLNode class:
 This implementation features an AVLNode class, where each object of type AVLNode holds the following instance fields:
 
 * value: the value stored in the node
@@ -56,20 +56,20 @@ It also has the following functions:
 
 ### Experiment 1
 
-We will examine the average number of balancing steps required in a series of insertions, deletions, and a mixture of insertions and deletions, for different sizes of trees.
+This experiment examine the average number of balancing steps required in a series of insertions, deletions, and a mixture of insertions and deletions, for different sizes of trees.
 The number of nodes that will be inserted into the tree will be: n = 1500 * 2^i. For example, when i = 1, the tree size will be 3000, and when i = 10, the tree size will be about 1.5 million. This will be done for i = 1, ..., 10.
 
 For each tree size, we will conduct three separate experiments:
 
-Insert elements in random order.
-Insert elements in random order (time measurement not included), followed by deletion of the elements in random order.
-Insert n/2 elements in random order, then perform n/2 insertions and deletions in random order.
+a. Insert elements in random order.
+b. Insert elements in random order (time measurement not included), followed by deletion of the elements in random order.
+c. Insert n/2 elements in random order, then perform n/2 insertions and deletions in random order.
 
 Results Summary:
 
 ***table:*** showing the number of ***rotations*** in the tree as a function of the value of n for each of the experiments
 
-|i	|n = 1500*2^i	|Ex1- insertions	|Ex2- deletion	|Ex3- insertion and deletion|
+|i	|n = 1500*2^i	|a- insertions	|b- deletion	|c- insertion and deletion|
 |:---: |:---: |:---: |:---: |:---: |
 |1	|3000	|2066	|1152	|1904|
 |2	|6000	|4205	|2201	|3701|
@@ -91,9 +91,9 @@ Results Summary:
 The results presented in the graph demonstrate that the trend lines and R^2 values suggest that each insertion/deletion series takes O(n) rotations.
 
 ### Experiment 2
-In this experiment, we will compare the performance of an AVL tree with that of a linked list and an array in terms of insertions.
-The insertions will be performed at the beginning, randomly, and at the end of the list.
-The number of nodes to be inserted into the tree will be n = 1500 * i, for i = 1, ..., 10.
+This experiment is about comparing the insertions performance of an AVL tree with that of a linked list and an array.
+The insertions will be performed at the beginning, randomly, and at the end of the list. <br />
+The number of values to be inserted into the list will be n = 1500 * i, for i = 1, 2, ..., 10.
 
 #### a. Beginning insertions:
 
@@ -117,19 +117,20 @@ The number of nodes to be inserted into the tree will be n = 1500 * i, for i = 1
 
 Results analysis:
 ##### AVL Tree:
-The operation of inserting at the beginning requires a trip from the root of the tree to the minimum of the tree each time.
-This results in paths with lengths of log1 + log2 + ... + logn = O(nlogn). The balancing operations have a complexity of O(1), making the total work of the insertion operation at the beginning O(nlogn).
+The operation of inserting values at the beginning requires a trip from the root of the tree to the minimum of the tree each time.
+This results in paths with lengths of log1 + log2 + ... + logn = O(nlogn). The balancing operations for every insertion have a complexity of O(1), making the total work of the insertion operation at the beginning O(nlogn).
 For n elements, the amortized time to insert a member into the tree is O(logn).
-The time measurement results show that the time increases at a rate less than linear, indicating an adjustment to the expectation.
+The time measurement results show that the time increases at a rate that is less than linear, indicating an adjustment to the expectation.
 Additionally, the AVL data structure that we implemented has significantly less efficient running times compared to built-in implementations in Python and C language.
 Despite having higher asymptotic running complexity, their running times were lower than our AVL tree implementation.
 ##### Linked List:
-The operation of inserting at the beginning in a linked list requires a fixed number of operations, resulting in a time complexity of O(n) for inserting n elements.
-The amortized time to insert an element at the beginning of the list is O(1). The results of the experiment showed an approximately constant running time for inserting an element at the beginning, with an average running time that does not change significantly with an increase in n.
+The operation of inserting an element at the beginning of a linked list requires a fixed number of operations, resulting in a time complexity of O(n) for inserting n elements.
+The amortized (and Worst case) time to insert an element at the beginning of the list is O(1). The results of the experiment showed an approximately constant running time for inserting an element at the beginning, with an average running time that does not change significantly with an increase in n.
 This data structure has the lowest running times among the three structures for inserting at the beginning, as expected due to the constant number of operations required.
 #### Array:
-The initialization of an array takes O(n). Inserting n elements into the array at the beginning results in a time complexity of 1 + 2 + ... + n = O(n^2), leading to an amortized time  of O(n) for insert an element at the beginning of the array.
-The results of the experiment showed a linear growth rate of the average insertion time with an increase in n, matching the expectation. Despite the linear growth rate, the running times for the array were much lower than those of the AVL tree that we implemented.
+The initialization of an empty array takes O(1).<br />
+Inserting n elements into the array at the beginning results in a time complexity of 1 + 2 + ... + n = O(n^2), leading to an amortized time  of O(n) for insert an element at the beginning of the array.
+The results of the experiment showed a linear growth rate of the average insertion time with an increase in n, matching the expectation. Despite the linear growth rate, the running times for the array were much lower than those of the AVL tree that implemented.
 
 #### b. Random insertions:
 
@@ -153,7 +154,7 @@ The results of the experiment showed a linear growth rate of the average inserti
 Results analysis:
 ##### AVL Tree:
 When inserting elements to a random possition in an AVL tree, each insertion requires traversing from the root to a leaf, resulting in a total complexity of O(nlogn).
-The balancing operation is done with a complexity of O(1), thus the overall time for a random insertion is O(nlogn).
+for every insertion the balancing operation is done with a complexity of O(1), thus the overall time for a random insertion is O(nlogn).
 For n elements, the average time for inserting one element into the tree is O(logn).
 The time measurement shows that the increase in time is less than linear.
 ##### Linked List:
@@ -201,4 +202,4 @@ Adding to the end of an array has an amortized complexity of O(1). The results a
 Although the average time complexities for inserting an element at the end are the same for arrays and linked lists, the running times for arrays are lower for the tested n values.
 This is likely due to the efficient implementation of the array data structure in python. The running times for arrays are the lowest for inserting an element at the end.
 
-
+Thanks for reading
