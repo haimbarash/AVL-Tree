@@ -1,5 +1,10 @@
 # AVL-Tree
+
+Hey everyone, this repository include an implementation of List ADT using an AVL tree, complete with a complexity analysis and two experiments to validate the analysis resultes.
+
+
 An AVL tree is a self-balancing binary search tree that maintains balance by ensuring that the height difference of the left and right subtrees of any node is not more than 1. This helps to ensure the tree remains balanced and search operations have an average time complexity of O(log n).
+
 
 This implementation features an AVLNode class, where each object of type AVLNode holds the following instance fields:
 
@@ -62,11 +67,10 @@ Insert n/2 elements in random order, then perform n/2 insertions and deletions i
 
 Results Summary:
 
-table: showing the number of rotations in the tree as a function of the value of n for each of the experiments
+***table:*** showing the number of ***rotations*** in the tree as a function of the value of n for each of the experiments
 
-|  |  |Rotations|
-|--|--|---------|
-|i	|n	|Ex1- insertions	|Ex2- deletion	|Ex3- insertion and deletion|
+|i	|n = 1500*2^i	|Ex1- insertions	|Ex2- deletion	|Ex3- insertion and deletion|
+|:---: |:---: |:---: |:---: |:---: |
 |1	|3000	|2066	|1152	|1904|
 |2	|6000	|4205	|2201	|3701|
 |3	|12000	|8299	|4509	|7380|
@@ -77,11 +81,14 @@ table: showing the number of rotations in the tree as a function of the value of
 |8	|384000	|268185	|143536	|235745|
 |9	|768000	|536842	|286764	|471019|
 |10	|1536000	|1072027	|575258	|942639|
-|Complexity	|O(n)	|O(n)	|O(n)|
+|Complexity	||O(n)	|O(n)	|O(n)|
 
-Graph showing the correlation between the number of rotations in the tree and the value of n, along with the trendline equation.
+***Graph:*** showing the correlation between the number of rotations in the tree and the value of n, along with the trendline equation.
 
-Insert graph here
+<img src="https://user-images.githubusercontent.com/112472485/217863001-baa50887-d7f0-439d-bb7b-e476a6e91770.png" width="700">
+
+
+The results presented in the graph demonstrate that the trend lines and R^2 values suggest that each insertion/deletion series takes O(n) rotations.
 
 ### Experiment 2
 In this experiment, we will compare the performance of an AVL tree with that of a linked list and an array in terms of insertions.
@@ -90,19 +97,23 @@ The number of nodes to be inserted into the tree will be n = 1500 * i, for i = 1
 
 #### a. Beginning insertions:
 
-i	n	AVL tree beginning insertions [Sec]	Linked list beginning insertions [Sec]	Array beginning insertions [Sec]
-1	1500	9.69E-06	6.75E-08	2.33E-07
-2	3000	9.26E-06	5.44E-08	4.27E-07
-3	4500	9.13E-06	5.76E-08	5.82E-07
-4	6000	9.43E-06	5.46E-08	8.10E-07
-5	7500	1.08E-05	5.57E-08	9.67E-07
-6	9000	9.99E-06	5.48E-08	1.16E-06
-7	10500	9.93E-06	5.51E-08	1.35E-06
-8	12000	1.18E-05	5.50E-08	1.70E-06
-9	13500	1.13E-05	5.55E-08	2.12E-06
-10	15000	1.09E-05	5.52E-08	2.15E-06
+|i	|n = 1500*i	|AVL tree beginning insertions [Sec]	|Linked list beginning insertions [Sec]	|Array beginning insertions [Sec]|
+|:---: |:---: |:---: |:---: |:---: |
+|1	|1500	|9.69E-06	|6.75E-08	|2.33E-07|
+|2	|3000	|9.26E-06	|5.44E-08	|4.27E-07|
+|3	|4500	|9.13E-06	|5.76E-08	|5.82E-07|
+|4	|6000	|9.43E-06	|5.46E-08	|8.10E-07|
+|5	|7500	|1.08E-05	|5.57E-08	|9.67E-07|
+|6	|9000	|9.99E-06	|5.48E-08	|1.16E-06|
+|7	|10500	|9.93E-06	|5.51E-08	|1.35E-06|
+|8	|12000	|1.18E-05	|5.50E-08	|1.70E-06|
+|9	|13500	|1.13E-05	|5.55E-08	|2.12E-06|
+|10	|15000	|1.09E-05	|5.52E-08	|2.15E-06|
 
-Graph:
+***Graph:***
+
+<img src=https://user-images.githubusercontent.com/112472485/217863174-f0633680-42e4-4d70-984c-fefeb6761ee6.png width="700">
+
 
 Results analysis:
 ##### AVL Tree:
@@ -122,19 +133,22 @@ The results of the experiment showed a linear growth rate of the average inserti
 
 #### b. Random insertions:
 
-i	n	AVL tree random insertions [Sec]	Linked list random insertions [Sec]	Array random insertions [Sec]
-1	1500	9.67E-06	7.27E-07	7.28E-07
-2	3000	1.04E-05	9.89E-07	7.98E-07
-3	4500	1.05E-05	1.22E-06	7.41E-07
-4	6000	1.07E-05	1.27E-06	8.57E-07
-5	7500	1.09E-05	1.43E-06	9.53E-07
-6	9000	1.27E-05	1.59E-06	1.04E-06
-7	10500	1.14E-05	1.74E-06	1.15E-06
-8	12000	1.41E-05	1.89E-06	1.24E-06
-9	13500	1.16E-05	2.12E-06	1.38E-06
-10	15000	1.30E-05	2.43E-06	1.44E-06
+|i	|n	|AVL tree random insertions [Sec]	|Linked list random insertions [Sec]	|Array random insertions [Sec]|
+|:---: |:---: |:---: |:---: |:---: |
+|1	|1500	|9.67E-06	|7.27E-07	|7.28E-07|
+|2	|3000	|1.04E-05	|9.89E-07	|7.98E-07|
+|3	|4500	|1.05E-05	|1.22E-06	|7.41E-07|
+|4	|6000	|1.07E-05	|1.27E-06	|8.57E-07|
+|5	|7500	|1.09E-05	|1.43E-06	|9.53E-07|
+|6	|9000	|1.27E-05	|1.59E-06	|1.04E-06|
+|7	|10500	|1.14E-05	|1.74E-06	|1.15E-06|
+|8	|12000	|1.41E-05	|1.89E-06	|1.24E-06|
+|9	|13500	|1.16E-05	|2.12E-06	|1.38E-06|
+|10	|15000	|1.30E-05	|2.43E-06	|1.44E-06|
 
-Graph:
+***Graph:***
+
+<img src=https://user-images.githubusercontent.com/112472485/217863298-f1979bc7-202f-4699-9ba9-0fcdfc23fdf4.png width="700">
 
 Results analysis:
 ##### AVL Tree:
@@ -156,19 +170,22 @@ This may be due to the efficient implementation of arrays in python. The running
 
 #### c. insertions to the end of the list:
 
-i	n	AVL tree end insertions [Sec]	Linked list end insertions [Sec]	Array end insertions [Sec]
-1	1500	1.06E-05	4.96E-08	5.39E-08
-2	3000	1.04E-05	4.87E-08	4.12E-08
-3	4500	1.06E-05	4.72E-08	3.78E-08
-4	6000	1.08E-05	4.87E-08	3.58E-08
-5	7500	1.09E-05	4.68E-08	3.48E-08
-6	9000	1.10E-05	4.82E-08	3.50E-08
-7	10500	1.43E-05	4.72E-08	3.44E-08
-8	12000	1.22E-05	5.02E-08	3.44E-08
-9	13500	1.38E-05	5.18E-08	3.49E-08
-10	15000	1.03E-05	4.92E-08	3.41E-08
+|i	|n	|AVL tree end insertions [Sec]	|Linked list end insertions [Sec]	|Array end insertions [Sec]|
+|:---: |:---: |:---: |:---: |:---: |
+|1	|1500	|1.06E-05	|4.96E-08	|5.39E-08|
+|2	|3000	|1.04E-05	|4.87E-08	|4.12E-08|
+|3	|4500	|1.06E-05	|4.72E-08	|3.78E-08|
+|4	|6000	|1.08E-05	|4.87E-08	|3.58E-08|
+|5	|7500	|1.09E-05	|4.68E-08	|3.48E-08|
+|6	|9000	|1.10E-05	|4.82E-08	|3.50E-08|
+|7	|10500	|1.43E-05	|4.72E-08	|3.44E-08|
+|8	|12000	|1.22E-05	|5.02E-08	|3.44E-08|
+|9	|13500	|1.38E-05	|5.18E-08	|3.49E-08|
+|10	|15000	|1.03E-05	|4.92E-08	|3.41E-08|
 
-Graph:
+***Graph:***
+
+<img src=https://user-images.githubusercontent.com/112472485/217863368-8d14439e-6cf0-4f32-8826-c122c6f472db.png width="700">
 
 Results analysis:
 ##### AVL Tree:
