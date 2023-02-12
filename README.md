@@ -1,6 +1,6 @@
 # AVL-Tree
 
-Hey everyone, this repository include an implementation of The List ADT using an AVL tree, complete with a complexity analysis and two experiments to validate the analysis resultes.
+Hey everyone, this repository include an implementation of the list ADT using an AVL tree, complete with a complexity analysis and two experiments to validate the analysis resultes.
 
 
 An AVL tree is a self-balancing binary search tree that maintains balance by ensuring that the height difference of the left and right subtrees of any node is not more than 1. This helps to ensure the tree remains balanced and search operations have an average time complexity of O(log n).
